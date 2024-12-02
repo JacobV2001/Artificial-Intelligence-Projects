@@ -1,5 +1,5 @@
 import Backtracking as BT
-#import SudokuSimulatedAnnealing as SSA
+import HillClimbing as HC
 
 def check_initial_puzzle(puzzle):
 
@@ -50,7 +50,8 @@ def check_initial_puzzle(puzzle):
     [0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 """
-"""puzzle = [
+
+puzzle = [
     [0, 0, 0, 1, 0, 2, 0, 0, 0],
     [0, 6, 0, 0, 0, 0, 0, 7, 0],
     [0, 0, 8, 0, 0, 0, 9, 0, 0],
@@ -60,9 +61,9 @@ def check_initial_puzzle(puzzle):
     [0, 0, 9, 0, 0, 0, 8, 0, 5],
     [0, 7, 0, 0, 0, 0, 0, 6, 0],
     [0, 0, 0, 3, 0, 4, 0, 0, 0]
-]"""
+]
 
-puzzle = [
+"""puzzle = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -72,11 +73,12 @@ puzzle = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1]
-]
+]"""
 
 
 if check_initial_puzzle(puzzle):
     print("Puzzle Invaild")
     exit()
 else:
+    HC.HC_run(puzzle)    
     BT.BT_run(puzzle)
