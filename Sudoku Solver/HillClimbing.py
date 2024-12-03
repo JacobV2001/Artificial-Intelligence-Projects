@@ -21,7 +21,7 @@ def HC_generate_initial_solution(puzzle):
                 initial_solution[i][j] = num
                 occurences[num] += 1
 
-        return initial_solution 
+    return initial_solution 
     
 def HC_count_conficts(puzzle):
     # create grid to hold conflicts
@@ -71,7 +71,7 @@ def HC_count_conficts(puzzle):
 
 def HC_hill_climbing(puzzle):
     initial_puzzle = HC_generate_initial_solution(puzzle) # gen solution
-    max_iterations = 1000000 # number of iterations to avoid inf loop
+    max_iterations = 500000 # number of iterations to avoid inf loop
     current_puzzle = copy.deepcopy(initial_puzzle) # create a copy of puzzle
 
     for iteration in range(max_iterations):
@@ -92,7 +92,7 @@ def HC_hill_climbing(puzzle):
         row2, col2 = second_cell
         current_puzzle[row1][col1], current_puzzle[row2][col2] = current_puzzle[row2][col2], current_puzzle[row1][col1]
 
-        if iteration % 2500 == 0: #rancom restart to escape local minima
+        if iteration % 2500 == 0: # random restart to escape local minima
             current_puzzle = copy.deepcopy(HC_generate_initial_solution(puzzle))
         
         print("Iteration #" + str(iteration))
@@ -111,4 +111,4 @@ def HC_run(puzzle):
         print("Solved Puzzle With Hill Climbing")
         HC_print_puzzle(solved_puzzle)
     else:
-        print("Failed to solve.")
+        print("Failed to solve with Hill Climbing.")

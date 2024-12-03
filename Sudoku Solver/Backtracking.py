@@ -11,7 +11,6 @@ def BT_is_valid(puzzle, row, col, num):
             return False # conflict in column
         
     # checks for conflict in corresponding 3x3
-        # // means 
     start_row, start_col = 3 * (row//3), 3 * (col//3)
     for i in range(3):
         for j in range(3):
@@ -64,4 +63,4 @@ def BT_run(puzzle):
         print('Sudoku Puzzle Solved With Backtracking')
         BT_print_puzzle(puzzle)
     else:
-        print('No Solution')
+        print('No Solution with Backtracking.')

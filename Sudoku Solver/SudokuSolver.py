@@ -1,5 +1,6 @@
 import Backtracking as BT
 import HillClimbing as HC
+import SimulatedAnnealing as SA
 
 def check_initial_puzzle(puzzle):
 
@@ -38,7 +39,7 @@ def check_initial_puzzle(puzzle):
     # initial puzzle valid
     return False
 
-"""puzzle = [
+puzzle_1 = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -49,9 +50,8 @@ def check_initial_puzzle(puzzle):
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
-"""
 
-puzzle = [
+puzzle_2 = [
     [0, 0, 0, 1, 0, 2, 0, 0, 0],
     [0, 6, 0, 0, 0, 0, 0, 7, 0],
     [0, 0, 8, 0, 0, 0, 9, 0, 0],
@@ -63,7 +63,7 @@ puzzle = [
     [0, 0, 0, 3, 0, 4, 0, 0, 0]
 ]
 
-"""puzzle = [
+puzzle_3 = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -73,12 +73,16 @@ puzzle = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1]
-]"""
+]
 
+def run(puzzle):
+    if check_initial_puzzle(puzzle):
+        print("Puzzle Invaild")
+        exit()
+    else:
+        SA.SA_run(puzzle)
+        HC.HC_run(puzzle)    
+        BT.BT_run(puzzle)
 
-if check_initial_puzzle(puzzle):
-    print("Puzzle Invaild")
-    exit()
-else:
-    HC.HC_run(puzzle)    
-    BT.BT_run(puzzle)
+if __name__ == "__main__":
+    run(puzzle_2)
