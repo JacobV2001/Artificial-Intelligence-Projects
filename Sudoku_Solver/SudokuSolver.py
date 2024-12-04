@@ -2,6 +2,7 @@ import Backtracking as BT
 import HillClimbing as HC
 import SimulatedAnnealing as SA
 import time
+import copy
 
 def check_initial_puzzle(puzzle):
 
@@ -56,23 +57,26 @@ def run(puzzles):
 
             
             # calc the Backtracking times
+            send_puzzle = copy.deepcopy(puzzle)
             start_time = time.time()
-            value = BT.BT_run(puzzle)
+            value = BT.BT_run(send_puzzle)
             end_time = time.time()
             BT_times.append(end_time - start_time) # append time taken
             if value == True: BT_solved += 1 # add count if solved"""
 
             
             # calc the Simulated Annealing times
+            send_puzzle = copy.deepcopy(puzzle)
             start_time = time.time()
-            value = SA.SA_run(puzzle)
+            value = SA.SA_run(send_puzzle)
             end_time = time.time()
             SA_times.append(end_time - start_time) # append time taken
             if value == True: SA_solved += 1 # add count if solved"""
 
             # calc the Hill Climbing times
+            send_puzzle = copy.deepcopy(puzzle)
             start_time = time.time()
-            value = HC.HC_run(puzzle)    
+            value = HC.HC_run(send_puzzle)    
             end_time = time.time()
             HC_times.append(end_time - start_time) # append time take
             if value == True: HC_solved += 1 # add count if solved"""
