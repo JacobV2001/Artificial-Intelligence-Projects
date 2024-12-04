@@ -1,4 +1,4 @@
-# Biology-Inspired Sudoku Algorithmic Solutions
+# Biology-Inspired Sudoku Solver
 
 This project explores different Biology Inspired Machine Learning Algorithms (Backtracking, Hill Climbing, and Simulated Annealing) to attempt to solve 10 different Sudoku puzzles and compares their performance. The goal is to evaluate how well these algorithms are able to solve the puzzles as well as how quickly. This is to test whether they are a viable solution to solving Sudoku and examing why. 
 
